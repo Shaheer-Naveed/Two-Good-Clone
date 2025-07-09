@@ -1,0 +1,545 @@
+/* ============================
+   GLOBAL STYLES
+============================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+*::selection {
+    background-color: #000;
+    color: #fff;
+}
+
+body {
+    background: #f7f7f7;
+}
+
+/* ============================
+   CURSOR
+============================ */
+#cursor-main {
+    width: 150px;
+    height: 150px;
+    background-color: #f3e0a1;
+    border-radius: 50%;
+    position: fixed;
+    transform: translate(-50%, -50%) scale(0);
+}
+
+#img-container #cursor {
+    padding: 1.5vw 1vw;
+    border-radius: 50%;
+    color: #fff;
+    background-color: #000;
+    text-align: center;
+    position: fixed;
+    opacity: 0;
+}
+
+/* ============================
+   NAVBAR
+============================ */
+#nav {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3vw 1vw;
+    z-index: 99;
+    position: fixed;
+}
+
+#nav #nav-part1 {
+    height: 82px;
+    overflow: hidden;
+}
+
+#nav-part1 svg {
+    display: block;
+}
+
+#nav-part2 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 40px;
+}
+
+#nav-part2 #links a {
+    text-decoration: none;
+    color: #000;
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-right: 30px;
+    font-weight: 400;
+    position: relative;
+}
+
+#nav-part2 #links a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    width: 0;
+    background-color: #000;
+    transition: width 0.5s ease;
+}
+
+#nav-part2 #links a:hover::before {
+    width: 100%;
+}
+
+#nav-part2 #icons {
+    padding: 0 8px;
+    border-radius: 15px;
+    background-color: #f7f7f7;
+}
+
+#nav-part2 #icons i {
+    font-size: 16px;
+    font-weight: 400;
+    margin-right: 50px;
+}
+
+/* ============================
+   PAGE 1
+============================ */
+#line {
+    width: 95%;
+    margin: 3vw auto;
+    border: 1px solid #000;
+}
+
+#page1 {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    padding-top: 15vw;
+    padding: auto 1.4vw;
+}
+
+#page1 > h1 {
+    font-size: 15.7vw;
+    text-transform: uppercase;
+    line-height: 12vw;
+    letter-spacing: -8px;
+}
+
+#page1 #img-container {
+    height: 100vh;
+    width: 100%;
+    padding: 1vw;
+    position: relative;
+}
+
+#img-container img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+#page1 #info {
+    width: 100%;
+    padding: 4.5vw 1vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#info h1 {
+    font-size: 2.5vw;
+}
+
+.btn {
+    text-decoration: none;
+    color: #000;
+    font-size: 0.8vw;
+    padding-top: 1vw;
+    border-bottom: 1px solid #000;
+    text-transform: uppercase;
+}
+
+/* ============================
+   PAGE 2
+============================ */
+#page2 {
+    padding: 3vw 1vw;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100vh;
+    width: 100%;
+}
+
+#page2 .elem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 100%;
+    width: 30%;
+    padding: 1vw;
+}
+
+#page2 .elem img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    scale: 1.1;
+}
+
+#page2 .elem .dets {
+    width: 60%;
+    height: 50px;
+    position: absolute;
+    background-color: #DCC0B4;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.dets {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.5vw;
+}
+
+.dets h3 {
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.dets i {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* ============================
+   PAGE 3
+============================ */
+#page3 {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 2vw 1vw;
+}
+
+#child1,
+#child2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 55vh;
+    width: 35vw;
+}
+
+#child2 p {
+    margin-bottom: 2vw;
+}
+
+#child3,
+#child4,
+#child5,
+#child6 {
+    cursor: pointer;
+}
+
+.child {
+    height: 80vh;
+    width: 40vw;
+    margin-bottom: 6vw;
+    object-fit: cover;
+}
+
+.child h1 {
+    font-size: 3vw;
+    text-transform: uppercase;
+}
+
+.child img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: 3vw;
+}
+
+.item-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.item-info h3,
+p {
+    font-weight: 400;
+    font-size: 15px;
+}
+
+/* ============================
+   FOOTER
+============================ */
+#footer {
+    position: relative;
+    min-height: 70vh;
+    width: 100%;
+    padding: 3vw 1vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.col h2 {
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.col ul li {
+    list-style: none;
+    text-align: left;
+}
+
+.col ol li {
+    list-style: none;
+    text-align: right;
+    cursor: pointer;
+}
+
+.col .links li a {
+    color: #000;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.col img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.remarks {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.remarks p {
+    padding: 5px;
+    font-size: 12px;
+    color: #333;
+    text-transform: uppercase;
+}
+
+/* ============================
+   RESPONSIVE MEDIA QUERIES
+============================ */
+
+/* Tablets and small laptops */
+@media (max-width: 1024px) {
+    #nav {
+        padding-left: 2vw;
+    }
+
+    #links {
+        display: none;
+    }
+
+    #nav-part2 #links a {
+        font-size: 12px;
+        margin-right: 15px;
+    }
+
+    #page1 {
+        min-height: 90vh;
+    }
+
+    #page1 #img-container {
+        height: 60vh;
+    }
+
+    #page1 > h1 {
+        font-size: 11vw;
+        line-height: 10vw;
+        letter-spacing: -5px;
+    }
+
+    #info h1 {
+        font-size: 4vw;
+    }
+
+    .btn {
+        font-size: 2vw;
+    }
+
+    #page2 {
+        flex-direction: column;
+        gap: 4vw;
+    }
+
+    #page2 .elem {
+        height: 80%;
+        width: 80%;
+        padding: 2vw;
+    }
+
+    #page3 {
+        flex-direction: column;
+        padding: 4vw 2vw;
+    }
+
+    .child {
+        height: auto;
+        width: 80%;
+    }
+
+    #child1,
+    #child2 {
+        width: 90vw;
+        height: auto;
+    }
+
+    #footer {
+        flex-direction: column;
+        gap: 2vw;
+    }
+
+    .remarks {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+    #nav {
+        padding: 5vw 2vw;
+    }
+
+    #nav #nav-part1 {
+        height: 60px;
+    }
+
+    #nav-part1 svg {
+        height: 60px;
+    }
+
+    #nav-part2 #links a {
+        font-size: 11px;
+        margin-right: 10px;
+    }
+
+    #page1 > h1 {
+        margin: 20px;
+        font-size: 11vw;
+        line-height: 9.5vw;
+    }
+
+    #info h1 {
+        font-size: 5vw;
+    }
+
+    #info p {
+        font-size: 12px;
+    }
+
+    .btn {
+        font-size: 2.5vw;
+    }
+
+    #img-container #cursor {
+        display: none;
+    }
+
+    .dets {
+        height: auto;
+        padding: auto 5vw;
+    }
+
+    .dets h3 {
+        font-size: 10px;
+    }
+
+    .dets i {
+        font-size: 12px;
+    }
+
+    .child h1 {
+        font-size: 5vw;
+    }
+
+    .item-info h3,
+    p {
+        font-size: 14px;
+    }
+
+    #footer .col {
+        width: 100%;
+        text-align: center;
+    }
+
+    .col ul li,
+    .col ol li {
+        text-align: center;
+    }
+
+    .col img {
+        width: 50%;
+        height: 50%;
+    }
+}
+
+/* Very Small Devices (phones) */
+@media (max-width: 480px) {
+    #page1 {
+        min-height: 50vh;
+    }
+
+    #page1 > h1:nth-child(1) {
+        margin-top: 50px;
+    }
+
+    #page1 > h1 {
+        font-size: 13vw;
+        letter-spacing: -2px;
+    }
+
+    #page1 #img-container {
+        height: 40vh;
+    }
+
+    #nav-part2 #icons i {
+        margin-right: 20px;
+    }
+
+    .btn {
+        font-size: 3vw;
+    }
+
+    .child h1 {
+        font-size: 6vw;
+    }
+
+    .remarks p {
+        font-size: 10px;
+    }
+}
