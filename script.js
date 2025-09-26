@@ -1,3 +1,34 @@
+function navlinks(){
+    const menuIcon = document.querySelector('#icons .ri-menu-line');
+    const links = document.querySelector('#links');
+    const body = document.body;
+    const overlay = document.createElement('div');
+    overlay.id = 'overlay';
+    document.body.appendChild(overlay);
+    
+    menuIcon.addEventListener('click', () => {
+      links.classList.toggle('active');
+      menuIcon.classList.toggle('active');
+      overlay.classList.toggle('active');
+    
+      if (links.classList.contains('active')) {
+        body.classList.add('no-scroll');
+      } else {
+        body.classList.remove('no-scroll');
+      }
+    });
+    
+    // Close navbar if overlay is clicked
+    overlay.addEventListener('click', () => {
+      links.classList.remove('active');
+      menuIcon.classList.remove('active');
+      overlay.classList.remove('active');
+      body.classList.remove('no-scroll');
+    });
+    
+}
+navlinks();
+
 function locomotive(){
     gsap.registerPlugin(ScrollTrigger);
     const locoScroll = new LocomotiveScroll({
