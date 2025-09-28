@@ -27,6 +27,7 @@ function navlinks(){
     });
     
 }
+
 navlinks();
 
 function locomotive(){
@@ -96,30 +97,48 @@ function loadanim(){
 
 }
 loadanim();
-function nav(){
-    gsap.to("#nav-part1 svg",{
-    transform:"translateY(-100%)",
-    scrollTrigger:{
-    trigger:"#page1",
-    scroller:"#scroll-wrapper",
-    start:"top 0",
-    end:"top -10%",
-    scrub:true
-    },
-    })
-    gsap.to("#nav-part2 #links",{
-    transform:"translateY(-100%)",
-    opacity:0,
-    scrollTrigger:{
-    trigger:"#page1",
-    scroller:"#scroll-wrapper",
-    start:"top 0",
-    end:"top -10%",
-    scrub:true
-    },
-    })
-}
-nav();
+function nav() {
+    // Logo animation (both desktop & mobile ok)
+    gsap.to("#nav-part1 svg", {
+      transform: "translateY(-100%)",
+      scrollTrigger: {
+        trigger: "#page1",
+        scroller: "#scroll-wrapper",
+        start: "top 0",
+        end: "top -10%",
+        scrub: true
+      },
+    });
+  
+    // Desktop-only animations
+    ScrollTrigger.matchMedia({
+      "(min-width: 1025px)": function () {
+        // Animate links out on scroll
+        gsap.to("#nav-part2 #links", {
+          transform: "translateY(-100%)",
+          opacity: 0,
+          scrollTrigger: {
+            trigger: "#page1",
+            scroller: "#scroll-wrapper",
+            start: "top 0",
+            end: "top -10%",
+            scrub: true
+          },
+        });
+  
+        // Glass effect toggle
+        ScrollTrigger.create({
+          scroller: "#scroll-wrapper",
+          start: "top -1",          // activate once scrolled 1px
+          end: "bottom bottom",     // stays till bottom
+          toggleClass: { targets: "#nav", className: "glass-nav" }
+        });
+      }
+    });
+  }
+  nav();
+  
+  
 function cursor(){
     document.addEventListener("mousemove",function(dets){
         gsap.to("#cursor-main",{
