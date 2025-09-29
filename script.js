@@ -126,13 +126,7 @@ function nav() {
           },
         });
   
-        // Glass effect toggle
-        ScrollTrigger.create({
-          scroller: "#scroll-wrapper",
-          start: "top -1",          // activate once scrolled 1px
-          end: "bottom bottom",     // stays till bottom
-          toggleClass: { targets: "#nav", className: "glass-nav" }
-        });
+       
       }
     });
   }
